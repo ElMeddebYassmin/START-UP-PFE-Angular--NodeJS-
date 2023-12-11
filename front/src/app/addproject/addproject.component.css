@@ -1,0 +1,67 @@
+
+mat-grid-tile {
+  background-position: center;
+    padding: 50px;
+    height: 110%;
+    width: 50%;
+    align-items: center;
+  }
+ 
+  
+
+  .mat-tab-group{
+    margin: 10px;
+  }
+  .title{
+    color: rgb(123, 169, 197);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .form-container{
+    width: 500px; 
+    margin: 0 px auto; 
+    margin-top: 150 px;
+    align-content: center;
+   }
+  
+  .form-field{
+    display: block
+  }
+  
+  .log{
+    text-decoration: none;
+    text-align: center;
+    color: rgb(154, 180, 196);
+    padding: 10px ;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    border-style: solid;
+    border-color: rgb(154, 180, 196);
+    background-color: white;
+    border-width: 1px;
+    width: 100%;
+    font-size: 18px;
+    transition: 0.2s;
+    text-transform: uppercase;
+  }
+  .log:hover{
+    transition: 0.5s;
+    background-color:rgb(154, 180, 196);
+    color: white;
+    font-size: 19px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px
+  }
+  
+  .dejaFait{
+    text-decoration: none;
+    color: gray;
+  }
+  .host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }

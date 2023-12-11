@@ -1,0 +1,74 @@
+<nav id="nav">
+    <div class="logo">
+        <h4 style="font-family: 'Times New Roman', Times, serif;">Start-Up</h4>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a routerLink="/chat"><span class="material-icons">near_me</span></a>
+        </li>
+        <li>
+            <a routerLink="#"><span class="material-icons">notifications</span></a>
+        </li>
+        <li>
+            <div class="input-group">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-addon" (click)="search()"/>
+                <button type="button" class="btn btn-outline-warning">search</button>
+            </div>
+        </li>
+        <li>
+            <div class="UserMenu">
+                <img src="{{ tab[4] }}" style="background-image: url(./../../assets/Images/profile_pic.png);"
+                    routerLink="/user/interface">
+            </div>
+        </li>
+    </ul>
+</nav>
+
+    <div *ngIf="projects.length!=0"  class="flex-container">
+    <div *ngFor="let p of projects"  >
+        <mat-card class="example-card">
+            <mat-card-header>
+                <img mat-card-avatar class="example-header-image" src={{p.user.avatar}}>
+                <mat-card-title>{{p.user.nom}} {{p.user.prenom}}</mat-card-title>
+                <mat-card-subtitle>{{p.createdAt}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src={{p.image}}>
+            <mat-card-content>
+                <p>
+                    {{p.description}} </p>
+            </mat-card-content>
+            <mat-card-title>Prix : {{p.prix}}</mat-card-title>
+            <mat-card-actions > <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                <mat-icon>favorite</mat-icon>
+              </button></mat-card-actions>
+           
+            <mat-divider></mat-divider><br>
+            <div *ngFor="let c of p.comments">
+                <mat-card-content>
+                    <p>    <mat-card-title><p style="font-family: 'Times New Roman', Times, serif; font-size: 16px;">{{c.user.nom}} {{c.user.prenom}} :</p></mat-card-title>
+                        {{c.contenu}} </p>
+                </mat-card-content></div>
+                <form [formGroup]="commentForm" (ngSubmit)="addCommentaire(p.id)">
+                    <mat-card-actions >
+                        <mat-form-field class="form-field" appearance="outline">
+                <input type="text" placeholder="Ajouter un commentaire." required autocomplete="off" 
+                matInput formControlName="contenu"/>
+                <mat-error *ngIf="commentForm.controls.contenu.touched && commentForm.controls.contenu.invalid">
+                    <span *ngIf="commentForm.controls.contenu.errors.required">Veuillez saisir un commentaire !</span>
+                  </mat-error>
+            </mat-form-field>
+                <button mat-button type="submit" style="background-color: rgb(123, 169, 197);" [disabled]="commentForm.invalid">Commenter</button>
+            </mat-card-actions></form>
+            <form>
+                <mat-card-actions>
+                    <button mat-button style="background-color: #78909C; margin-left: 60px; width: 170px; 
+                    letter-spacing: 3px;border-color: #a5beca;" (click)="onCreate1(p.id)">Commandez !</button>    
+                </mat-card-actions>
+            </form>
+        </mat-card><br>
+    </div>
+</div>
+<mat-paginator [pageSizeOptions]="pageSizeOptions" [length]="totalItems" [pageSize]="pageSize"
+      (page)="onPaginateChange($event)" showFirstLastButtons [disabled]="!isActive">
+  </mat-paginator>

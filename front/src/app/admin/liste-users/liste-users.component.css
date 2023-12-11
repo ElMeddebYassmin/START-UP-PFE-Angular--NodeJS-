@@ -1,0 +1,38 @@
+   #bg{
+      /* background:beige;*/
+      background-image: url(../../../assets/Images/white-abstract-background_23-2148806276.jpg);
+      width: 182%;
+   }
+
+   .mat-form-field {
+        font-size: 18px;
+        width: 100%;
+        font-family: 'Times New Roman', Times, serif;
+        padding-left: 0.3%;
+    }
+      
+    th {
+        text-align:center ;
+        width: 10%;
+        font-weight: bold;
+    }
+
+   
+
+
+#bm{
+
+width: 100%;
+background-image: url(../../../assets/Images/white-abstract-background_23-2148806276.jpg);
+padding: 5px;
+text-align:center ;
+}
+h1{
+font-family: 'Times New Roman', Times, serif;
+font-weight: bold;
+color: rgb(44, 41, 41);
+font-size: 30px;
+}
+ul li {
+    list-style: none;
+  }

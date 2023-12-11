@@ -1,0 +1,46 @@
+<html lang="en">
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      
+         <h4> <img src="{{ tab[4] }}" style="background-image: url(./../../assets/Images/profile_pic.png); width: 45px; height: 45px;">
+  <i style="padding-left: 15px;"><a routerLink="/user/interface" style="color: white;"> {{tab[2]}} {{tab[3]}}</a></i></h4>
+      <a href="user/interface" class="btn">Leave Room</a>
+    </header>
+    <main class="chat-main">
+      <div class="div"> 
+      </div>
+      <div class="chat-messages">
+					<div class="message">
+						<p class="meta">Brad <span>9:12pm</span></p>
+						<p class="text">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+							repudiandae.
+						</p>
+					</div>
+					<div class="message">
+						<p class="meta">Mary <span>9:15pm</span></p>
+						<p class="text">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+							repudiandae.
+						</p>
+					</div>
+      </div>
+    </main>
+    <div class="chat-form-container">
+      <form id="chat-form">
+        <input
+          id="msg"
+          type="text"
+          placeholder="Enter Message"
+          required
+          autocomplete="off"
+        />
+        <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+#bg{
+    width: 100%;
+ }
+
+ .mat-form-field {
+      font-size: 18px;
+      width: 100%;
+      font-family: 'Times New Roman', Times, serif;
+      padding-left: 0.3%;
+  }
+    
+  th {
+      text-align:center ;
+      width: 10%;
+      font-weight: bold;
+  }
+#bm{
+
+width: 100%; 
+padding: 5px;
+text-align:center ;
+}
+h1{
+font-family: 'Times New Roman', Times, serif;
+font-weight: bold;
+color: rgb(44, 41, 41);
+font-size: 25px;
+}
+ul li {
+  list-style: none;
+}

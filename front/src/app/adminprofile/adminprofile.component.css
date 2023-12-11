@@ -1,0 +1,222 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 9vh;
+    height: 30px;
+    background-color: #78909C;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    
+}
+div.logo{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+.nav-links li{
+    list-style: none;
+    padding-top: 100px;
+}
+.nav-links a{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 14px;
+    
+    
+}
+.btn{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 14px;
+    
+}
+.UserMenu
+{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    padding-right: 50px;
+    transition: 0.5s;
+    padding-bottom: 30px;
+}
+ 
+div.UserMenu img
+{
+    width: 50%;
+    height: 40%;
+    border-radius: 60%;
+    
+}
+
+
+
+
+
+ 
+.UserInfo
+{
+    margin: 0px;
+    padding: 0.1%;
+    background-color: #f6f5f1;
+}
+ 
+.UserImage
+{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    padding-right: 50px;
+     transition: 0.5s
+    
+}
+ 
+.UserImage:hover
+{
+    width: 300px;
+    height: 300px;
+    transition: 0.5s
+}
+ 
+div.UserImage img
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+ 
+.UserDesc
+{
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    
+}
+div.User
+{
+   padding-left: 300px;
+   
+}
+ 
+.fonc{
+    padding-left: 250px;
+    padding-right: 250px;
+    
+ }
+ .fonc label{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 14px;
+    
+ }
+
+ :host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  mat-drawer-container {
+    height: 100%;
+  }
+  
+  mat-drawer-content {
+    padding: 20px;
+  }
+  .page-container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+}
+.page-content-container{
+padding: 50px;
+}
+
+.sidebar{
+    height: 150%;
+    width: 400px;
+    background-color: rgb(221, 236, 231);
+
+}
+
+.list-items{
+    padding-top: 5px;
+    
+}
+
+.list-item{
+    font-size: 18px;
+    color: #78909C;
+    padding: 10px 20px;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.list-item:hover{
+    
+color: rgb(255, 153, 0);
+
+}
+
+
+
+.list-item::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    top: 0;
+    left: 0;
+    background-color: rgb(235, 235, 196);
+    opacity: 0;
+    transform: scaleY(0);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.list-item:hover::before{
+    opacity: 1;
+    transform: scaleY(1);
+   
+   }
+.list-item i.material-icons{
+    margin-right:12px;
+    font-size: 24px;
+
+}
+
+.mat-icon{
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+
+
+.profile-card{
+text-align: center;
+padding: 0 20px 20px 20px;
+}
+
+img{
+width: 80px;
+height: 80px;
+object-fit: cover0;
+border-radius: 50%;
+}

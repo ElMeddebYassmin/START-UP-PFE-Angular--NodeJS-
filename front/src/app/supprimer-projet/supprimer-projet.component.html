@@ -1,0 +1,18 @@
+
+
+<br><br>
+<div class="form-container">
+  <h4 class="mod" style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">
+    Supprimer Projet.
+  </h4><br>
+  <form name="editForm" [formGroup]="editForm" novalidate>
+    <!--Nom-->
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label> ID Projet </mat-label>
+      <input matInput formControlName="id" required value="" >
+  
+    </mat-form-field>
+    <button class="log" mat-flat-button (click)="effectuerCommande(projects.id)" >Supprimer</button><br><br>  <simple-notifications></simple-notifications>  
+    <button mat-flat-button  [mat-dialog-close]  class="log">Close</button>   
+  </form><br><br><br>
+</div>

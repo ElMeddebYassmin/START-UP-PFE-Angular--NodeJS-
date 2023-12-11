@@ -1,0 +1,43 @@
+    
+      <div class="example-container"><br><br>
+      <h3 class="title" style="font-family: Georgia, 'Times New Roman', Times, serif;text-align: center;">Ajouter votre projet !</h3><br>
+          <div class="form-container">
+          <form name="projectForm"  [formGroup]="projectForm" novalidate>
+            <!--Nom du projet-->
+        <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Nom de votre projet </mat-label>
+          <input matInput formControlName="nomProjet" required>
+        <mat-error *ngIf="projectForm.controls.nomProjet.touched && projectForm.controls.nomProjet.invalid">
+          <span *ngIf="projectForm.controls.nomProjet.errors.required">Veuillez saisir le nom de votre projet.</span>
+        </mat-error>
+        </mat-form-field>
+        <!--Description-->
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Description </mat-label>
+            <textarea  matInput formControlName="description" required></textarea>
+          <mat-error *ngIf="projectForm.controls.description.touched && projectForm.controls.description.invalid">
+            <span *ngIf="projectForm.controls.description.errors.required">Veuillez saisir une description pour votre projet.</span>
+          </mat-error>
+          </mat-form-field>
+          <!--Prix-->
+        <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Prix </mat-label>
+        <span matSuffix>/DT</span>
+          <input matInput formControlName="prix"  required>
+        <mat-error *ngIf="projectForm.controls.prix.touched && projectForm.controls.prix.invalid">
+          <span *ngIf="projectForm.controls.prix.errors.required">Veuillez entrer le prix de votre projet.</span>
+        </mat-error>
+        </mat-form-field><br>
+        <!--Image-->
+              <input type="file" formControlName="image"  class="form-field" (change)="onFileSelect($event)" required><br>
+          <div *ngIf="messages" class="alert alert-danger"> {{ messages.error.message }} </div>
+            <button class="log" mat-flat-button (click)="Add()" [disabled]="projectForm.invalid">Valider</button><br><br>
+            <!-- <button (click)="onError()"></button> -->
+            <simple-notifications></simple-notifications>  
+            <button mat-flat-button  [mat-dialog-close]  class="log">Close</button>   
+          </form><br><br><br>
+            </div>
+          </div>
+   
+  
+  

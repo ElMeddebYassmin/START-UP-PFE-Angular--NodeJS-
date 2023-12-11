@@ -1,0 +1,41 @@
+<!-- <mat-grid-list cols="3" rowHeight="1:1">
+    <a routerLink='/addproject'>
+        <mat-grid-tile><span class="material-icons"> add</span></mat-grid-tile></a>
+</mat-grid-list> <br> -->
+
+<!-- add photo -->
+<mat-toolbar class="header" style="word-spacing: 5px; right: 5px;">
+    
+    <!-- <h1 style="font-family: 'Times New Roman', Times, serif; padding-right: 15px;">Ajouter votre projet !</h1>
+    <span fxFlex></span>
+    <button mat-mini-fab color="accent" matTooltip="Ajouter un nouveau !" (click)="onCreate()">
+        <mat-icon>add</mat-icon>
+    </button> -->
+    <button type="button" class="btn btn-outline-dark"  (click)="onCreate()">
+        Ajouter projet
+      </button><div class="input-group" style="padding-left: 20px;">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+          aria-describedby="search-addon" />
+        <button type="button" class="btn btn-outline-secondary">search</button>
+      </div>
+</mat-toolbar>
+<div *ngIf="projetsU?.length!=0" class="container">
+  <div *ngFor="let p of projetsU">
+<mat-card class="example-card">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16"
+   (click)="onCreate1(p.id)">
+    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+  </svg>
+  <img mat-card-image src={{p?.image}} alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+    {{p.description}}  </p>
+  </mat-card-content>
+    <mat-card-title>Date d'ajout : {{p?.createdAt}}</mat-card-title>
+    <mat-card-title>Prix :{{p?.prix}} </mat-card-title>
+</mat-card>
+</div></div>
+
+  <mat-paginator [pageSizeOptions]="pageSizeOptions" [length]="totalItems" [pageSize]="pageSize"
+      (page)="onPaginateChange($event)" showFirstLastButtons [disabled]="!isActive">
+  </mat-paginator>

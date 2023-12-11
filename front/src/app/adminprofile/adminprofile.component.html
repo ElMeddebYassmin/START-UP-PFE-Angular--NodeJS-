@@ -1,0 +1,89 @@
+<nav id="nav">
+ 
+    <div class="logo">
+        <h4 routerLink="/">Start-Up</h4>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a routerLink="/depot" ><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon></a>
+        </li>
+      
+        <li>
+            <a routerLink="#" ><span class="material-icons"> notifications </span></a>
+        </li>
+        <li>
+            <div class="UserMenu">
+                <img src="{{ tab[4] }}" style="background-image: url(./../../assets/Images/profile_pic.png); " id="PhotoUser"[matMenuTriggerFor]="beforeMenu">
+            </div>
+            
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item (click)="onCreate()">Modifier profil</button>
+            <button mat-menu-item *ngIf="AuthService.loggedIn()" (click)="AuthService.logoutUser()" >Se déconnecter</button>
+            </mat-menu>
+        </li>
+    </ul>
+  </nav>
+
+  <div class="page-container">
+
+    <div class="sidebar">
+
+        <div class="profile-card">
+            <div class="header"><br>
+                <img src="{{ tab[4] }}" style="
+                background-image:url(./../../assets/Images/profile_pic.png); height: 150px; width: 150px;  ">
+                <div class="hover-image">
+                    <br>
+                    <input type="file"  (change)="onFileSelect($event)" class="dn" #input>
+                </div> <br> 
+                <button (click)="onSubmit()" type="button" class="btn btn-dark" >submit photo</button><br><br>
+                <simple-notifications></simple-notifications>  
+               <h2 style="font-family: 'Times New Roman', Times, serif;">Bienvenue Admin </h2>
+               <h3 style="font-family: 'Times New Roman', Times, serif; text-align: center;">  {{ tab[2] }} {{tab[3]}} </h3>
+            </div> 
+        </div>
+
+        <mat-divider></mat-divider>
+<br>
+<h2 style="text-align: center;font-size: 25px;font-family: 'Times New Roman', Times, serif;">Dashboard</h2>
+
+<div class="list-items">
+    <a href="admin/interface/liste/users" class="list-item">
+      <i class="material-icons">bookmark_border</i>
+        Liste des utilisateurs </a>
+    <a href="admin/interface/liste/desac" class="list-item">
+      <i class="material-icons">bookmark_border</i>
+        Liste des comptes désactivés </a>
+    <a href="admin/interface/liste/projets" class="list-item">
+        <i class="material-icons">bookmark_border</i>
+       Liste des projets </a>
+     
+</div>
+<br>
+<mat-divider></mat-divider> 
+<!-- <h2 matSubheader>Tools</h2>
+<a mat-list-item routerLinkActive="list-item-active" routerLink="#">
+<mat-icon>import_contacts</mat-icon>Contacts</a>
+<a mat-list-item routerLinkActive="list-item-active" routerLink="#">
+    <mat-icon>contact_phone</mat-icon>Leads</a> -->
+
+
+    
+    </div>
+    <div class="page-content-container">   <router-outlet></router-outlet></div>
+ 
+</div>
+<div class="displayed">
+
+</div>
+
+ 
+  
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+mat-grid-tile {
+    background-image: url(../../assets/Images/background-form.png);
+    height: 100%;
+    background-position: center;
+    background-repeat: repeat;
+  }
+.grid1{
+    background-image: url(../../assets/Images/6c63383e356247d68fa891dc780f174c.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80%;
+}
+.icon{
+   float: left;
+}
+
+.example-container{
+    text-align: center
+}
+.title{
+    color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.form-container{
+    width: 500px; 
+    margin: 0 px auto; 
+    margin-top: 200 px
+}
+
+.form-field{
+    display: block
+}
+
+.log{
+    text-decoration: none;
+    text-align: center;
+    color: rgb(123, 169, 197);
+    padding: 12px ;
+    margin-top: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-style: solid;
+    border-color: rgb(123, 169, 197);
+    background-color: white;
+    border-width: 1px;
+    width: 100%;
+    font-size: 18px;
+    transition: 0.2s;
+    text-transform: uppercase;
+}
+.log:hover{
+    transition: 0.5s;
+    background-color:rgb(123, 169, 197);
+    color: white;
+    font-size: 19px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px
+}
+
+.dejaFait{
+    text-decoration: none;
+    color: gray;
+}

@@ -1,0 +1,94 @@
+<mat-grid-list cols="2">
+  <mat-grid-tile class="grid2"> 
+    <div class="example-container"><br><br>
+    <h3 class="title" style="font-family: Georgia, 'Times New Roman', Times, serif;">Inscrivez-vous !</h3><br>
+        <div class="form-container">
+        <form name="registerForm"  [formGroup]="registerForm" novalidate>
+          <!--Nom-->
+      <mat-form-field class="form-field" appearance="outline">
+      <mat-label> Nom </mat-label>
+        <input matInput formControlName="nom" required>
+      <mat-error *ngIf="registerForm.controls.nom.touched && registerForm.controls.nom.invalid">
+        <span *ngIf="registerForm.controls.nom.errors.required">Veuillez saisir un nom.</span>
+      </mat-error>
+      </mat-form-field>
+      <!--prenom-->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Prenom </mat-label>
+          <input matInput formControlName="prenom" required>
+        <mat-error *ngIf="registerForm.controls.prenom.touched && registerForm.controls.prenom.invalid">
+          <span *ngIf="registerForm.controls.prenom.errors.required">Veuillez saisir un prenom.</span>
+        </mat-error>
+        </mat-form-field>
+        <!--E-mail-->
+      <mat-form-field class="form-field" appearance="outline">
+      <mat-label> E-mail </mat-label>
+        <input matInput formControlName="email" required>
+      <mat-error *ngIf="registerForm.controls.email.touched && registerForm.controls.email.invalid">
+        <span *ngIf="registerForm.controls.email.errors.required">Veuillez saisir votre email.</span>
+        <span *ngIf="registerForm.controls.email.errors.pattern">Votre E-mail est invalid.</span>
+      </mat-error>
+      </mat-form-field>
+      <!--Mot de passe-->
+      <mat-form-field class="form-field" appearance="outline">
+      <mat-label> Mot de passe </mat-label>
+        <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      <mat-error *ngIf="registerForm.controls.password.touched && registerForm.controls.password.invalid">
+        <span *ngIf="registerForm.controls.password.errors.required">Veuillez saisir votre mot de passe.</span>
+      </mat-error>
+      </mat-form-field>
+      <!--Vérifier mot de passe-->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Confirmer mot de passe </mat-label>
+          <input matInput formControlName="confirmPassword" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        <mat-error *ngIf="registerForm.controls.confirmPassword.touched && registerForm.controls.confirmPassword.invalid">
+          <span *ngIf=" registerForm.controls.confirmPassword.errors.mustMatch ">Veuillez vérifier votre mot de passe.</span>
+        </mat-error>
+        </mat-form-field>
+      <!--Date de naissance-->
+      <mat-form-field color="accent" class="form-field" appearance="outline">
+        <mat-label>Date de naissance</mat-label>
+        <input matInput formControlName="dateNaissance" [matDatepicker]="picker1" required>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <mat-error *ngIf="registerForm.controls.dateNaissance.touched && registerForm.controls.dateNaissance.invalid">
+          <span *ngIf="registerForm.controls.dateNaissance.errors.required">Veuillez entrer votre date de naissance.</span>
+        </mat-error>
+      </mat-form-field>
+      <!--Telephone-->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Telephone</mat-label>
+            <input matInput formControlName="telephone" required>
+        <mat-error *ngIf="registerForm.controls.telephone.touched && registerForm.controls.telephone.invalid">
+            <span *ngIf="registerForm.controls.telephone.errors.required">le numero de votre telephone est obligatoire.</span>
+            <span *ngIf="registerForm.controls.telephone.errors.pattern">le numero de votre telephone doit etre 8 chiffre.</span>
+        </mat-error>
+        </mat-form-field>
+        <div *ngIf="messages" class="alert alert-danger"> {{ messages.error.message }} </div>
+          <button class="log" mat-flat-button (click)="onSubmit()" [disabled]="registerForm.invalid">Créer un compte</button><br><br>
+          <a href="/login" class="dejaFait" style="font-family: 'Times New Roman', Times, serif;">Avez vous deja un compte ?</a>
+          <simple-notifications></simple-notifications> 
+        </form><br><br><br>
+          </div>
+        </div>
+    </mat-grid-tile>
+  <mat-grid-tile class="grid1">
+<img src="./../../assets/logo.jpg" width="55" height="50" style=" margin-bottom: 810px; "/>
+ <a  href="/" style="font-family: 'Times New Roman', Times, serif; letter-spacing: 20px; font-size: 28px;
+  text-decoration-color : rgb(255, 153, 0);
+  text-decoration-line : underline;
+  text-decoration-style : solid;
+  color: white;
+   margin-bottom: 810px; 
+   margin-left: 25px;
+  "><b style="color:rgb(255, 153, 0) ;">START</b>-UP</a>
+   
+  </mat-grid-tile>
+
+  </mat-grid-list>

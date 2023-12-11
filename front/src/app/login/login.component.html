@@ -1,0 +1,42 @@
+<mat-grid-list cols="2">
+  <mat-grid-tile class="grid1"> 
+    <img src="./../../assets/logo.jpg" width="55" height="50" style=" margin-bottom: 810px; "/><a  href="/" style="font-family: 'Times New Roman', Times, serif; letter-spacing: 20px; font-size: 28px;
+    text-decoration-color : rgb(255, 153, 0);
+    text-decoration-line : underline;
+    text-decoration-style : solid;
+    color: black;
+     margin-bottom: 810px; 
+     margin-left: 25px;"><b style="color:rgb(255, 153, 0) ;">START</b>-UP</a></mat-grid-tile>
+  <mat-grid-tile class="grid2"> 
+      
+    <div class="example-container">
+    <h1 class="title">bienvenue !</h1><br>
+    <div class="form-container">
+    <form name="loginForm"  [formGroup]="loginForm" novalidate>
+  <mat-form-field class="form-field" appearance="outline">
+  <mat-label> E-mail </mat-label>
+    <input matInput formControlName="email" required>
+  <mat-error *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">
+    <span *ngIf="loginForm.controls.email.errors.required">Veuillez saisir votre email.</span>
+    <span *ngIf="loginForm.controls.email.errors.pattern">Votre E-mail est invalid.</span>
+  </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-field" appearance="outline">
+  <mat-label> Password </mat-label>
+    <!--<input matInput  type="password"> -->
+    <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  <mat-error *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
+    <span *ngIf="loginForm.controls.password.errors.required">Veuillez saisir votre mot de passe.</span>
+  </mat-error>
+  </mat-form-field>
+    <button class="log" mat-flat-button type="submit" (click)="loginUser()" [disabled]="loginForm.invalid">Se connecter</button><br><br>
+    <a href="/register" class="dejaFait" style="font-family: 'Times New Roman', Times, serif;">Je suis un nouveau utilisateur</a>
+    <simple-notifications></simple-notifications>   
+  </form>
+    </div>
+    </div>
+  </mat-grid-tile>
+  </mat-grid-list> 

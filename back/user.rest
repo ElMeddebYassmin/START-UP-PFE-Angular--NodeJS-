@@ -1,0 +1,17 @@
+POST http://localhost:3127/user/
+Content-Type: application/json
+
+{
+    "nom" : "yoyo",
+    "prenom" : "yo",
+    "dateNaissance" : 12/12/2012,
+    "telephone" : "29452990",
+    "email":"yo@gmail.com",
+    "motDePasse" : "yoyoyo",
+    "isAdmin" : false,
+}
+
+###
+GET http://localhost:3127/user/
+###
+DELETE http://localhost:3127/user/3

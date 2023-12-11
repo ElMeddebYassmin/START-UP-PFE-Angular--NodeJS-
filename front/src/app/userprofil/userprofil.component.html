@@ -1,0 +1,70 @@
+<nav id="nav">
+    <div class="logo">
+        <h4 style="font-family: 'Times New Roman', Times, serif;">Start-Up</h4>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a routerLink="/depot">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/chat"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-messenger" viewBox="0 0 16 16">
+                <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.639.639 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.639.639 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76zm5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
+              </svg></a>
+        </li>
+        <li>
+            <a routerLink="#"><span class="material-icons">notifications</span></a>
+        </li>
+        <li>
+            <div class="UserMenu">
+                <img src="{{ tab[4] }}" style="background-image: url(./../../assets/Images/profile_pic.png);"
+                    id="PhotoUser" [matMenuTriggerFor]="beforeMenu">
+            </div>
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item (click)="onCreate()"> Modifier profil</button>
+                <button mat-menu-item (click)="authSer.logoutUser()">Se déconnecter</button>
+            </mat-menu>
+        </li>
+    </ul>
+</nav><br>
+<section class="UserInfo" style="background-image: url(../../assets/Images/28024b5042bcde70a260566f167b7c0c.gif);">
+    <div class='User'>
+        <table><br>
+            <tr>
+                <td>
+                    <img src="{{ tab[4] }}"
+                        style="height: 250px; width: 250px; background-image:url(./../../assets/Images/profile_pic.png);background-repeat: no-repeat; border-radius: 50%;">
+                    <div class="hover-image">
+                        <br>
+                        <input type="file" class="btn btn-outline-dark" (change)="onFileSelect($event)" class="dn"
+                            #input>
+                    </div> <br>
+                    <button (click)="onSubmit()" type="button" class="btn btn-dark">submit photo</button>
+                    <simple-notifications></simple-notifications>
+                </td>
+                <td>
+                    <div class="UserDesc">
+                        <h1 style="font-family: 'Times New Roman', Times, serif;padding-bottom: 100px;">Bienvenue . .
+                            .<br>
+                            {{ tab[2] }} {{tab[3]}} <br>
+                            <h6 style="padding-top: 22px;text-decoration:  underline ;" (click)="onCreate1()"> Visualier
+                                vos données </h6>
+                        </h1>
+
+
+                    </div>
+                </td>
+            </tr><br>
+        </table>
+    </div>
+
+</section>
+<br>
+<mat-tab-group mat-align-tabs="center" animationDuration="0ms" class="fonc" style="background-color:white">
+    <mat-tab label="Project"><br>
+        <app-project></app-project><br><br>
+    </mat-tab>
+    <mat-tab label="Mes Commandes"><br><app-commande></app-commande></mat-tab>
+    <mat-tab label="Autres Commandes"><br></mat-tab>
+</mat-tab-group>

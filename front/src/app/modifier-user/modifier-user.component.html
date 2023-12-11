@@ -1,0 +1,62 @@
+
+  <br><br>
+      <div class="form-container">
+        <h1 class="mod" style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">Modifier Utilisateur
+        </h1>
+        <form name="editForm" [formGroup]="editForm" novalidate>
+          <!--Nom-->
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Nom </mat-label>
+            <input matInput formControlName="nom" required >
+            <mat-error *ngIf="editForm.controls.nom.touched && editForm.controls.nom.invalid">
+              <span *ngIf="editForm.controls.nom.errors.required">Veuillez saisir un nom.</span>
+            </mat-error>
+          </mat-form-field>
+          <!--prenom-->
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Prenom </mat-label>
+            <input matInput formControlName="prenom" required>
+            <mat-error *ngIf="editForm.controls.prenom.touched && editForm.controls.prenom.invalid">
+              <span *ngIf="editForm.controls.prenom.errors.required">Veuillez saisir un prenom.</span>
+            </mat-error>
+          </mat-form-field>
+          <!--E-mail-->
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> E-mail </mat-label>
+            <input matInput formControlName="email" required>
+            <mat-error *ngIf="editForm.controls.email.touched && editForm.controls.email.invalid">
+              <span *ngIf="editForm.controls.email.errors.required">Veuillez saisir votre email.</span>
+              <span *ngIf="editForm.controls.email.errors.pattern">Votre E-mail est invalid.</span>
+            </mat-error>
+          </mat-form-field>
+
+          <!--Date de naissance-->
+          <mat-form-field color="accent" class="form-field" appearance="outline">
+            <mat-label>Date de naissance</mat-label>
+            <input matInput formControlName="dateNaissance" [matDatepicker]="picker1" required>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+            <mat-error *ngIf="editForm.controls.dateNaissance.touched && editForm.controls.dateNaissance.invalid">
+              <span *ngIf="editForm.controls.dateNaissance.errors.required">Veuillez entrer votre date de
+                naissance.</span>
+            </mat-error>
+          </mat-form-field>
+          <!--Telephone-->
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Telephone</mat-label>
+            <input matInput formControlName="telephone" required>
+            <mat-error *ngIf="editForm.controls.telephone.touched && editForm.controls.telephone.invalid">
+              <span *ngIf="editForm.controls.telephone.errors.required">le numero de votre telephone est
+                obligatoire.</span>
+              <span *ngIf="editForm.controls.telephone.errors.pattern">le numero de votre telephone doit etre 8
+                chiffre.</span>
+            </mat-error>
+          </mat-form-field>
+          <div *ngIf="messages" class="alert alert-danger"> {{ messages.error.message }} </div>
+          <button class="log" mat-flat-button (click)="modifier()" >Modifier</button><br><br>
+          <simple-notifications></simple-notifications> 
+          <button mat-flat-button  [mat-dialog-close]  class="log">Close</button>   
+        </form><br><br><br>
+      </div>
+  
+  

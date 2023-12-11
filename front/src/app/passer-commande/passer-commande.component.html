@@ -1,0 +1,32 @@
+
+
+<br><br>
+<div class="form-container">
+  <h4 class="mod" style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">Veuillez remplir ces champs pour
+    pouvoir effectuer votre commande !
+  </h4><br>
+  <form name="editForm" [formGroup]="editForm" novalidate>
+    <!--Nom-->
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label> Adresse </mat-label>
+      <input matInput formControlName="adresse" required >
+      <mat-error *ngIf="editForm.controls.adresse.touched && editForm.controls.adresse.invalid">
+        <span *ngIf="editForm.controls.adresse.errors.required">Le champ adresse est obligatoire !</span>
+      </mat-error>
+    </mat-form-field>
+    <!--Telephone-->
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label> Telephone</mat-label>
+      <input matInput formControlName="telephone" required>
+      <mat-error *ngIf="editForm.controls.telephone.touched && editForm.controls.telephone.invalid">
+        <span *ngIf="editForm.controls.telephone.errors.required">Le champ telephone est
+          obligatoire !</span>
+        <span *ngIf="editForm.controls.telephone.errors.pattern">le numero de votre telephone doit etre 8
+          chiffre.</span>
+      </mat-error>
+    </mat-form-field>
+    <div *ngIf="messages" class="alert alert-danger"> {{ messages.error.message }} </div>
+    <button class="log" mat-flat-button (click)="effectuerCommande()" >Commader</button><br><br>  <simple-notifications></simple-notifications>  
+    <button mat-flat-button  [mat-dialog-close]  class="log">Close</button>   
+  </form><br><br><br>
+</div>

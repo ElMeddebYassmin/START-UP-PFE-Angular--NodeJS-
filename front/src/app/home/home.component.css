@@ -1,0 +1,265 @@
+body {
+	margin: 0;
+	font-family: 'Times New Roman', Times, serif, sans-serif;
+  }
+  
+  .site-logo {
+	font-weight: 900;
+	font-size: 0.8rem;
+	color: var(--text);
+	text-decoration: none;
+	padding-left: 35px;
+	font-size: 20px;
+  }
+ 
+  header {
+	--text: #f4f4f4;
+	--text-inverse: #333;
+	--background: transparent;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2em 3em;
+	transition: background 250ms ease-in;
+	background: var(--background);
+	color: var(--text);
+  }
+  
+  .nav__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+
+  }
+  
+  .nav__link {
+	--spacing: 1em;
+	text-decoration: none;
+	color: inherit;
+	display: inline-block;
+	padding: calc(var(--spacing) / 2) var(--spacing);
+	position: relative;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 0.9rem;
+  }
+  
+  .nav__link:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: var(--spacing);
+	right: var(--spacing);
+	height: 2px;
+	background: currentColor;
+	-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+	transition: -webkit-transform 150ms ease-in-out;
+	transition: transform 150ms ease-in-out;
+	transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
+  }
+  
+  .nav__link:hover::after {
+	-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+  }
+  
+  .nav__link--btn {
+	border: 1.5px solid currentColor;
+	border-radius: 2em;
+	margin-left: 1em;
+	transition: background 250ms ease-in-out;
+	letter-spacing: 1px;
+	padding: 0.75em 1.5em;
+	font-size: 13.5px;
+  }
+  
+  .nav__link--btn:hover {
+	background: var(--text);
+	color: var(--text-inverse);
+	border-color: var(--text);
+  }
+  
+  .nav__link--btn::after {
+	display: none;
+  }
+  
+  
+  
+  .nav__link--btn--highlight:hover {
+	background: var(--text);
+	border-color: var(--text);
+  }
+  
+  .nav-scrolled {
+	--text: #333;
+	--text-inverse: #f4f4f4;
+	--background: #f4f4f4;
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+	height: 11.5%;
+  }
+  .foot{
+	background-color:#78909C ;  
+	font-family: 'Times New Roman', Times, serif;
+	padding-top: 40px;
+  }
+  .footer-content{
+	background-color:#78909C ;  
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  flex-direction: column;
+	  text-align: center;
+  }
+   .footer-content ul{
+	   list-style: none;
+	   display: flex;
+	   align-items: center;
+	   justify-content: center;
+	   margin: 1rem 0 3rem 0;
+   }
+
+   .footer-content ul li{
+	   margin: 0 25px;
+   }
+
+   .footer-content ul li a{
+	   text-decoration: none;
+	   color: wheat;
+   }
+    .footer-content ul li a img{
+		font-size: 1.1rem;
+	}
+	.footer-bottom{
+		background:#425561 ;  
+		width: 100vw;
+		text-align: center;
+		padding: 20px 0;
+		text-transform: uppercase;
+		opacity: 4;
+		font-weight: 200;
+	}
+	.footer-bottom p{
+		font-size: 14px;
+		font-family: 'Times New Roman', Times, serif;
+		text-transform: capitalize;
+		word-spacing: 2px;
+	}
+  
+  .home-intro {
+	padding: 25vh 0;
+	background-image: url(./../../assets/Images/j5.jpeg);
+/*	background: #123 url("https://source.unsplash.com/assets/header-photo-965bb662a61b37419fddb7766b44f16373955cb359f68a1c34da6ebaf59601cc.jpg");*/
+	background-size: cover;
+	background-blend-mode: multiply;
+	color: white;
+	text-align: center;
+	font-family: 'Times New Roman', Times, serif;
+	
+  }
+  
+  .home-about {
+	padding: 4em 0;
+	max-width: 900px;
+	margin: 0 auto;
+  }
+
+  .columns {
+	display: flex;
+	align-items: center;
+	
+  }
+  .more-stuff-grid {
+	background: #f4f4f4;
+	padding: 4em 0;
+	display: grid;
+	grid-gap: 2em;
+	align-items: center;
+	grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(200px, 400px)) minmax(1em, 1fr);
+  }
+  
+  .from-left {
+	grid-column: 2 / 3;
+  }
+  
+  .from-right {
+	grid-column: 3 / 4;
+  }
+
+/*search*/
+  .mdh-expandable-search {
+	margin: 0 50px;
+	align-items: center;
+	justify-content: center;
+	
+  }
+  
+  .mdh-expandable-search form {
+	max-width: 150%;
+
+  }
+  
+  .mdh-expandable-search,
+  .mdh-expandable-search form,
+  .mdh-expandable-search input {
+	/* Cross browser flex-grow */
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+  }
+  
+  .mdh-expandable-search,
+  .mdh-expandable-search form {
+	/* Cross browser inline-flex */
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -moz-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+  }
+  
+  /* Position search icon */
+  .mdh-expandable-search .material-icons {
+	position: relative;
+	right: -40px;
+	margin-left: -24px; /* Remove the blank space left behind by the icon being relatively positioned */
+  }
+  
+  .mdh-expandable-search input {
+	outline: none;
+	border: none;
+	font-size: 16px;
+	color: #FFFFFF;
+	background-color: #78909C;
+	padding: 0px 35px 0px 70px;
+	height: 40px;
+	line-height: 40px; /* TODO: This was recommended for cross browser compatability of input height, check if its actually needed in modern browsers */
+	
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+  }
+  
+  .mdh-expandable-search input::-webkit-input-placeholder { /* WebKit browsers */
+	  color:    #FFFFFF;
+  }
+  .mdh-expandable-search input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	 color:    #FFFFFF;
+	 opacity:  1; /* Firefox gives the placeholder a reduced opacity so we have to increase it */
+  }
+  .mdh-expandable-search input::-moz-placeholder { /* Mozilla Firefox 19+ */
+	 color:    #FFFFFF;
+	 opacity:  1; /* Firefox gives the placeholder a reduced opacity so we have to increase it */
+  }
+  .mdh-expandable-search input:-ms-input-placeholder { /* Internet Explorer 10+ */
+	 color:    #FFFFFF;
+  }
+  
+  

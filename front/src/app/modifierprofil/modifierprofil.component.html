@@ -1,0 +1,82 @@
+
+
+<br><br>
+    <div class="form-container">
+      <h4 class="mod" style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">Modifier Profil
+      </h4><br>
+      <form name="editForm" [formGroup]="editForm" novalidate>
+        <!--Nom-->
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Nom </mat-label>
+          <input matInput formControlName="nom" required value="{{tab[2]}}">
+          <mat-error *ngIf="editForm.controls.nom.touched && editForm.controls.nom.invalid">
+            <span *ngIf="editForm.controls.nom.errors.required">Veuillez modifier un nom.</span>
+          </mat-error>
+        </mat-form-field>
+        <!--prenom-->
+        <mat-form-field class="form-field" appearance="outline" >
+          <mat-label> Prenom </mat-label>
+          <input matInput formControlName="prenom" required value="{{tab[3]}}">
+          <mat-error *ngIf="editForm.controls.prenom.touched && editForm.controls.prenom.invalid">
+            <span *ngIf="editForm.controls.prenom.errors.required">Veuillez modifier un prenom.</span>
+          </mat-error>
+        </mat-form-field>
+        <!--E-mail-->
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> E-mail </mat-label>
+          <input matInput formControlName="email" required value="{{tab[5]}}">
+          <mat-error *ngIf="editForm.controls.email.touched && editForm.controls.email.invalid">
+            <span *ngIf="editForm.controls.email.errors.required">Veuillez modifier votre email.</span>
+            <span *ngIf="editForm.controls.email.errors.pattern">Votre E-mail est invalide.</span>
+          </mat-error>
+        </mat-form-field>
+        <!--Mot de passe-->
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Nouveau mot de passe </mat-label>
+          <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="editForm.controls.password.touched && editForm.controls.password.invalid">
+            <span *ngIf="editForm.controls.password.errors.required">Veuillez saisir votre nouveau mot de passe.</span>
+          </mat-error>
+        </mat-form-field>
+        <!--Vérifier mot de passe-->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Confirmer mot de passe </mat-label>
+          <input matInput formControlName="confirmPassword" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        <mat-error *ngIf="editForm.controls.confirmPassword.touched && editForm.controls.confirmPassword.invalid">
+          <span *ngIf=" editForm.controls.confirmPassword.errors.mustMatch ">Veuillez vérifier votre mot de passe.</span>
+        </mat-error>
+        </mat-form-field>
+        <!--Date de naissance-->
+        <mat-form-field color="accent" class="form-field" appearance="outline">
+          <mat-label>Date de naissance</mat-label>
+          <input matInput formControlName="dateNaissance" [matDatepicker]="picker1" required value="{{tab[6]}}">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+          <mat-error *ngIf="editForm.controls.dateNaissance.touched && editForm.controls.dateNaissance.invalid">
+            <span *ngIf="editForm.controls.dateNaissance.errors.required">Veuillez modifier votre date de
+              naissance.</span>
+          </mat-error>
+        </mat-form-field>
+        <!--Telephone-->
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Telephone</mat-label>
+          <input matInput formControlName="telephone" required value="{{tab[4]}}">
+          <mat-error *ngIf="editForm.controls.telephone.touched && editForm.controls.telephone.invalid">
+            <span *ngIf="editForm.controls.telephone.errors.required">le numero de votre telephone est
+              obligatoire.</span>
+            <span *ngIf="editForm.controls.telephone.errors.pattern">le numero de votre telephone doit etre 8
+              chiffre.</span>
+          </mat-error>
+        </mat-form-field>
+        <div *ngIf="messages" class="alert alert-danger"> {{ messages.error.message }} </div>
+        <button class="log" mat-flat-button (click)="modifier()" >Modifier</button><br><br>  <simple-notifications></simple-notifications>  
+        <button mat-flat-button  [mat-dialog-close]  class="log">Close</button>   
+      </form><br><br><br>
+   </div>
